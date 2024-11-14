@@ -1,0 +1,42 @@
+﻿<Window x:Class="Post_office_management_system_3.Forms.SignInForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sign In" Height="400" Width="400">
+
+    <Window.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF2196F3" Offset="0.0"/>
+            <GradientStop Color="#FF90CAF9" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="20">
+        <Border Background="#FFE3F2FD" CornerRadius="10" Padding="20">
+            <StackPanel>
+                <TextBlock Text="Sign In" FontSize="20" FontWeight="Bold" 
+                           Foreground="#FF1976D2" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Role Selection -->
+                <TextBlock Text="Select Role:" FontWeight="Bold" Foreground="Gray"/>
+                <ComboBox Name="RoleComboBox" Margin="0,10,0,20" Width="300">
+                    <ComboBoxItem Content="Client" />
+                    <ComboBoxItem Content="Employee" />
+                    <ComboBoxItem Content="HeadPostOffice" />
+                </ComboBox>
+
+                <!-- Email Field -->
+                <TextBlock Text="Email:" FontWeight="Bold" Foreground="Gray"/>
+                <TextBox Name="EmailTextBox" Margin="0,10,0,15" Width="300"/>
+
+                <!-- Password Field -->
+                <TextBlock Text="Password:" FontWeight="Bold" Foreground="Gray"/>
+                <PasswordBox Name="PasswordBox" Margin="0,10,0,15" Width="300"/>
+
+                <!-- Sign In Button -->
+                <Button Name="SignInButton" Content="Sign In" Width="300" Margin="0,20,0,0" 
+                        Click="SignInButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

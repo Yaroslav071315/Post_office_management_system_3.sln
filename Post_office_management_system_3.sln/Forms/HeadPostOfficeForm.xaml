@@ -1,0 +1,67 @@
+﻿<Window x:Class="Post_office_management_system_3.Forms.HeadPostOfficeForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Head Post Office Management" Height="825" Width="1000"
+        Background="#FFE3F2FD">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Background="White" CornerRadius="15" Padding="20" Grid.Row="0">
+            <GroupBox Header="Manage Head Post Offices" Padding="10" Background="#F0F0F0">
+                <StackPanel>
+                    <DataGrid Name="HeadPostOfficesDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Height="200" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Head Post Office ID" Binding="{Binding Id}" Width="Auto" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="Auto" />
+                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="Auto" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBox Name="HeadPostOfficeIdTextBox" Width="100" IsReadOnly="True" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                        <TextBox Name="HeadPostOfficeNameTextBox" Width="150" Margin="10,0,0,0" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                        <TextBox Name="HeadPostOfficeAddressTextBox" Width="150" Margin="10,0,0,0" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <Button Content="Load Offices" Width="100" Click="LoadHeadPostOfficesButton_Click" Background="#FF2196F3" Foreground="White" Padding=" 5" Cursor="Hand" />
+                        <Button Content="Update Office" Width="100" Margin="10,0,0,0" Click="UpdateHeadPostOfficeButton_Click" Background="#FF90CAF9" Foreground="White" Padding="5" Cursor="Hand" />
+                        <Button Content="Delete Office" Width="100" Margin="10,0,0,0" Click="DeleteHeadPostOfficeButton_Click" Background="Pink" Foreground="White" Padding="5" Cursor="Hand" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </Border>
+
+        <Border Background="White" CornerRadius="15" Padding="20" Grid.Row="1" Margin="0,10,0,0">
+            <GroupBox Header="Manage Employees" Padding="10" Background="#F0F0F0">
+                <StackPanel>
+                    <DataGrid Name="EmployeesDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Height="200" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Employee ID" Binding="{Binding Id}" Width="Auto" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="Auto" />
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="Auto" />
+                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="Auto" />
+                            <DataGridTextColumn Header="Head Post Office ID" Binding="{Binding HeadPostOfficeId}" Width="Auto" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBox Name="EmployeeIdTextBox" Width="100" IsReadOnly="True" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                        <TextBox Name="EmployeeNameTextBox" Width="150" Margin="10,0,0,0" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                        <TextBox Name="EmployeeEmailTextBox" Width="150" Margin="10,0,0,0" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                        <TextBox Name="EmployeePhoneTextBox" Width="100" Margin="10,0,0,0" Padding="5" Background="#F9F9F9" BorderBrush="#BDBDBD" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <Button Content="Load Employees" Width="100" Click="LoadEmployeesButton_Click" Background="#FF2196F3" Foreground="White" Padding="5" Cursor="Hand" />
+                        <Button Content="Update Employee" Width="100" Margin="10,0,0,0" Click="UpdateEmployeeButton_Click" Background="#FF90CAF9" Foreground="White" Padding="5" Cursor="Hand" />
+                        <Button Content="Delete Employee" Width="100" Margin="10,0,0,0" Click="DeleteEmployeeButton_Click" Background="Pink" Foreground="White" Padding="5" Cursor="Hand" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </Border>
+    </Grid>
+</Window>
