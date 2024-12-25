@@ -16,7 +16,7 @@ namespace Post_office_management_system_3.Data.Models
         }
           protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySql("Server=Localhost;Database=post_office041124_db;User=root;Password=445566778899N;",
+        optionsBuilder.UseMySql("Server=Localhost;Database=post_office041124_db;User=root;Password=******;",
             new MySqlServerVersion(new Version(8, 3,0 )));
     }
         public DbSet<HeadPostOffice> HeadPostOffices { get; set; }
